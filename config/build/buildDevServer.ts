@@ -5,5 +5,8 @@ export function buildDevServer(options:BuildOptions) : DevServerConfiguration{
     return {
         port: options.port ?? 3000,
         open: true,
+        //если раздовать статику через nginx то надо делать проксирование
+        historyApiFallback:true, // для dev-server, коректной работы spa навигации
+        hot:true, // обновление кода без перезагрузки страницы (необходимо скачать react-refresh-webpack-plugin)
     }
 }

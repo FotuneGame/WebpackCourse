@@ -27,7 +27,7 @@ export function buildWebpack(options:BuildOptions):webpack.Configuration{
             rules: buildLoaders(options),
         },
         resolve: buildResolvers(options),
-        devtool: isDev && 'inline-source-map',
+        devtool: isDev ? 'eval-cheap-module-source-map' : 'source-map', //Код после билда можно прочесть по файлам (isDev==true)
         devServer: isDev ? buildDevServer(options): undefined,
 
     }

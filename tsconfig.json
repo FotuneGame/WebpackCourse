@@ -11,7 +11,13 @@
     "module": "ESNext",
     // import * as ... from ... => import ... from ... (настройка дефолтного импорта)
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+
+    //настройка алиасов (псевдонимы путей)
+    "baseUrl": ".",
+    "paths": {
+      "@/*":["./src/*" ],
+    }
   },
 
   //изменил для webpack.config.ts
